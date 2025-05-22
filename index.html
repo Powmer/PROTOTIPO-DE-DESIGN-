@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Baking Bread - Curso de Panificação</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="overlay"></div>
+
+<header>
+    <button id="menu-button" aria-label="Abrir menu">&#9776;</button>
+    <img class="logo" src="https://chatgpt.com/s/m_682f971a00088191814dd18c37d6e579" alt="Logo Baking Bread" />
+</header>
+
+
+    <nav class="horizontal-menu" aria-label="Menu principal">
+        <button type="button">Receitas</button>
+        <button type="button">Cursos</button>
+        <button type="button">Saiba Mais</button>
+    </nav>
+
+    <nav id="side-menu" aria-label="Menu lateral">
+        <button id="close-button" aria-label="Fechar menu">&times;</button>
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Sobre o Curso</a></li>
+            <li><a href="#">Módulos</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="intro">
+            <h2>Bem-vindo ao curso Baking Bread</h2>
+            <p>Confira um de nossos cursos.</p>
+        </section>
+
+        <section class="bread-gallery">
+            <h3>Nossos Pães</h3>
+            <div class="bread-container">
+                <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=400&q=80" alt="Pão artesanal" />
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=400&q=80" alt="Pães variados" />
+                <img src="https://images.unsplash.com/photo-1542838687-682e4d2cd4a6?auto=format&fit=crop&w=400&q=80" alt="Pão crocante" />
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const menuBtn = document.getElementById("menu-button");
+        const closeBtn = document.getElementById("close-button");
+        const sideMenu = document.getElementById("side-menu");
+        const overlay = document.getElementById("overlay");
+
+        menuBtn.onclick = () => {
+            sideMenu.classList.add("open");
+            overlay.classList.add("active");
+        };
+
+        closeBtn.onclick = () => {
+            sideMenu.classList.remove("open");
+            overlay.classList.remove("active");
+        };
+
+        overlay.onclick = () => {
+            sideMenu.classList.remove("open");
+            overlay.classList.remove("active");
+        };
+    </script>
+</body>
+</html>
