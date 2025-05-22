@@ -43,45 +43,70 @@
             <p>Confira um de nossos cursos.</p>
         </section>
 
-        <section class="bread-gallery">
-            <h3>Confira nossas Receitas</h3>
-            <div class="bread-container">
-                <div class="bread-item">
-                    <img src="hhttps://www.culinariadavovo.com.br/wp-content/uploads/2022/04/receita-de-pao-frances.jpg" />
-                    <div class="bread-description">Pão de sal Artesanal com apenas 2 ingredientes.</div>
-                </div>
-                <div class="bread-item">
-                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=400&q=80" alt="Pães variados" />
-                    <div class="bread-description">Pão de forma Generico</div>
-                </div>
-                <div class="bread-item">
-                    <img src="https://www.culinariadavovo.com.br/wp-content/uploads/2022/04/receita-de-pao-frances.jpg" alt="Pão crocante" />
-                    <div class="bread-description">Pão de Hamburguer Artesanal.</div>
-                </div>
-                <div class="bread-item">
-                    <img src="https://www.culinariadavovo.com.br/wp-content/uploads/2022/04/receita-de-pao-frances.jpg" alt="Pão crocante" />
-                    <div class="bread-description">Pão de Hamburguer Artesanal.</div>
-                </div>
-                  <div class="bread-item">
-                    <img src="hhttps://www.culinariadavovo.com.br/wp-content/uploads/2022/04/receita-de-pao-frances.jpg" />
-                    <div class="bread-description">Pão de sal Artesanal com apenas 2 ingredientes.</div>
-                </div>
-                <div class="bread-item">
-                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=400&q=80" alt="Pães variados" />
-                    <div class="bread-description">Pão de forma Generico</div>
-                </div>
-                <div class="bread-item">
-                    <img src="https://www.culinariadavovo.com.br/wp-content/uploads/2022/04/receita-de-pao-frances.jpg" alt="Pão crocante" />
-                    <div class="bread-description">Pão de Hamburguer Artesanal.</div>
-                </div>
-                <div class="bread-item">
-                    <img src="https://www.culinariadavovo.com.br/wp-content/uploads/2022/04/receita-de-pao-frances.jpg" alt="Pão crocante" />
-                    <div class="bread-description">Pão de Hamburguer Artesanal.</div>
-                </div>
-        </section>
-    </main>
+     <main>
+    <section class="intro">
+        <h2>Bem-vindo ao curso de panificação!</h2>
+        <p>Aprenda a fazer pães incríveis com receitas práticas e dicas profissionais.</p>
+    </section>
 
-    <script>
+    <section class="bread-gallery">
+        <h3>Confira Nossas Receiras</h3>
+        <button class="carousel-btn" id="prev-btn" aria-label="Anterior" disabled>&lt;</button>
+        <div class="bread-container" id="bread-container">
+            <div class="bread-item">
+                <img src="https://images.unsplash.com/photo-1563805042-7684f3b0e7f8?auto=format&fit=crop&w=400&q=80" alt="Pão Francês" />
+                <div class="bread-description">Pão Francês crocante e fresco.</div>
+            </div>
+            <div class="bread-item">
+                <img src="https://images.unsplash.com/photo-1542831371-d531d36971e6?auto=format&fit=crop&w=400&q=80" alt="Pão de Centeio" />
+                <div class="bread-description">Pão de centeio integral, sabor rústico.</div>
+            </div>
+            <div class="bread-item">
+                <img src="https://images.unsplash.com/photo-1571997478779-85e58b89f096?auto=format&fit=crop&w=400&q=80" alt="Pão de Forma" />
+                <div class="bread-description">Pão de forma macio e versátil.</div>
+            </div>
+            <div class="bread-item">
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=400&q=80" alt="Baguete" />
+                <div class="bread-description">Baguete clássica com crosta fina.</div>
+            </div>
+            <div class="bread-item">
+                <img src="https://images.unsplash.com/photo-1542831371-4cde3e9c156e?auto=format&fit=crop&w=400&q=80" alt="Pão Integral" />
+                <div class="bread-description">Pão integral saudável e nutritivo.</div>
+            </div>
+        </div>
+        <button class="carousel-btn" id="next-btn" aria-label="Próximo">&gt;</button>
+    </section>
+</main>
+
+<script>
+const container = document.getElementById('bread-container');
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+
+const itemWidth = container.querySelector('.bread-item').offsetWidth + 16; // largura + gap (1rem = 16px)
+let scrollPosition = 0;
+
+prevBtn.addEventListener('click', () => {
+    scrollPosition -= itemWidth;
+    if(scrollPosition < 0) scrollPosition = 0;
+    container.scrollTo({left: scrollPosition, behavior: 'smooth'});
+    updateButtons();
+});
+
+nextBtn.addEventListener('click', () => {
+    scrollPosition += itemWidth;
+    const maxScroll = container.scrollWidth - container.clientWidth;
+    if(scrollPosition > maxScroll) scrollPosition = maxScroll;
+    container.scrollTo({left: scrollPosition, behavior: 'smooth'});
+    updateButtons();
+});
+
+function updateButtons() {
+    prevBtn.disabled = scrollPosition <= 0;
+    nextBtn.disabled = scrollPosition >= container.scrollWidth - container.clientWidth - 1;
+}
+
+updateButtons();
         const menuBtn = document.getElementById("menu-button");
         const closeBtn = document.getElementById("close-button");
         const sideMenu = document.getElementById("side-menu");
