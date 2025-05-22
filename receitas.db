@@ -1,0 +1,6 @@
+CREATE TABLE receitas (
+    id INTEGER PRIMARY KEY,
+    titulo TEXT,
+    descricao TEXT,
+    imagem_url TEXT
+);
