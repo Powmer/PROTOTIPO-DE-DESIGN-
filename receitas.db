@@ -4,3 +4,9 @@ CREATE TABLE receitas (
     descricao TEXT,
     imagem_url TEXT
 );
+INSERT INTO receitas (titulo, descricao, imagem_url) VALUES
+('Pão Francês', 'Pão Francês crocante e fresco.', 'https://...'),
+('Pão de Centeio', 'Pão de centeio integral, sabor rústico.', 'https://...'),
+('Pão de Forma', 'Pão de forma macio e versátil.', 'https://...'),
+('Baguete', 'Baguete clássica com crosta fina.', 'https://...'),
+('Pão Integral', 'Pão integral saudável e nutritivo.', 'https://...');
