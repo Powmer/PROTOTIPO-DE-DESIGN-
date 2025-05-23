@@ -114,7 +114,7 @@ header h1 {
 }
 
 #side-menu {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: -300px;
     width: 280px;
