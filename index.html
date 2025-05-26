@@ -8,7 +8,23 @@
 </head>
 <body>
     <div id="overlay"></div>
-
+<div id="modal-overlay" class="modal-overlay">
+  <div class="modal">
+    <span class="close-modal" onclick="closeModal()">&times;</span>
+    <h2>Cadastro</h2>
+    <form>
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" required>
+      <label for="sobrenome">Sobrenome</label>
+      <input type="text" id="sobrenome" name="sobrenome" required>
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" required>
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" name="senha" required>
+      <button type="submit" class="Singin">Cadastrar</button>
+    </form>
+  </div>
+</div>
 <header>
     <div class="left">
         <button id="menu-button" aria-label="Abrir menu">&#9776;</button>
@@ -78,7 +94,7 @@ const container = document.getElementById('bread-container');
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
 
-const itemWidth = container.querySelector('.bread-item').offsetWidth + 16; // largura + gap (1rem = 16px)
+const itemWidth = container.querySelector('.bread-item').offsetWidth + 16; // largura + gap 
 let scrollPosition = 0;
 
 prevBtn.addEventListener('click', () => {
@@ -121,6 +137,20 @@ updateButtons();
             sideMenu.classList.remove("open");
             overlay.classList.remove("active");
         };
+    
+function openModal() {
+  document.getElementById('modal-overlay').classList.add('active');
+}
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('active');
+}
+
+
+document.getElementById('btn-singup').addEventListener('click', function(event) {
+  event.preventDefault();
+  openModal();
+});
+
     </script>
 </body>
 </html>
