@@ -33,8 +33,8 @@
         <img class="logo" src="logo.png" alt="Logo Baking Bread" />
     </div>
     <div class="right">
-        <button class="Singin" id="Singin-button">Inscrever</button>
-        <button class="Login" id="Login-button">Login</button>
+        <button class="Singin" id="btn-singup">Inscrever</button>
+        <button class="Login" id="btn-singin">Login</button>
     </div>
 </header>
 
@@ -94,7 +94,7 @@ const container = document.getElementById('bread-container');
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
 
-const itemWidth = container.querySelector('.bread-item').offsetWidth + 16; // largura + gap 
+const itemWidth = container.querySelector('.bread-item').offsetWidth + 16; // largura + gap (1rem = 16px)
 let scrollPosition = 0;
 
 prevBtn.addEventListener('click', () => {
