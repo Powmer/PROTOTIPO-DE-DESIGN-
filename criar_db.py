@@ -13,6 +13,7 @@ CREATE TABLE IF NOT EXISTS receitas (
 ''')
 
 receitas = [
+    ('Uai SOU SIRIUS', 'E que voce nao entenderia.', 'https://s2-g1.glbimg.com/XGsKGJcNSZIdjX4YAijpcL8OziA=/0x0:736x731/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2018/f/m/34hg5jRC2YgLCNq6FBAw/coringa.jpg'),
     ("Pão Francês", "Pão Francês crocante e fresco.", "https://th.bing.com/th/id/OIP.4jicxCGDy4jzp-EakOxBJwHaEc?rs=1&pid=ImgDetMain"),
     ("Pão de Centeio", "Pão de centeio integral, sabor rústico.", "https://th.bing.com/th/id/OIP.4jicxCGDy4jzp-EakOxBJwHaEc?rs=1&pid=ImgDetMain"),
     ("Pão de Forma", "Pão de forma macio e versátil.", "https://th.bing.com/th/id/OIP.4jicxCGDy4jzp-EakOxBJwHaEc?rs=1&pid=ImgDetMain"),
